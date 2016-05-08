@@ -3,8 +3,9 @@
 The script takes as input the starting type in an xsd and drill down the hierarchy listing all the nodes from that root. In the process it appends the name at each level.
 
 For example if an XSD is as given below and starting root is a it will output
+
 	a
- 	  b
+	 b
         1
         2
      c
