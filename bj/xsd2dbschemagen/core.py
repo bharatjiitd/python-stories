@@ -39,12 +39,12 @@ class XSD2DBSchemaGenerator(object):
     def process(self, key, value, displayname):        
         def parse_child(child_type):
             name = child_type.get("name")
-            xmlType = child_type.get("type")
+            xmltype = child_type.get("type")
             
-            if any([x for x in self.simpletype_list if x[0] == xmlType]):
+            if any([x for x in self.simpletype_list if x[0] == xmltype]):
                 print(displayname+str(name))
             else:
-                root_tables = [y for x in self.complextype_list for y in x for z in y if z in {xmlType} ]                
+                root_tables = [y for x in self.complextype_list for y in x for z in y if z in {xmltype} ]                
                 [self.process(k, v,displayname+str(name)) for x in root_tables for k, v in x.iteritems()]                                
                     
         for x in value:
